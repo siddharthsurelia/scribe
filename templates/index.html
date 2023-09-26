@@ -1,0 +1,46 @@
+<style>
+    body {
+        background-color: darkgray;
+    }
+
+    .note {
+        border-color: whitesmoke;
+        height: 200px;
+        width: 200px;
+        padding: 10px;
+        background-color: tan;
+        border-width: 5px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        font-weight: bold;
+        overflow: scroll;
+    }
+
+    .add_note {
+        resize: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<h1>
+    Scribe: The left-aligned MINIMAL note app
+</h1>
+
+{% for d in data %}
+    <div class="note">
+{{ d["dataNote"] }}
+    </div>
+    <form action="/delete/{{ d['id'] }}">
+        <input type="submit" value="Delete">
+    </form>
+    <br>
+{% endfor %}
+    <form action="/create" method="POST">
+        <textarea class="add_note" name="dataNote" rows="9" cols="16"></textarea>
+        <br>
+        <input type="submit" value="Create">
+    </form>
