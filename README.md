@@ -1,3 +1,3 @@
 # scribe
 
-## The left-aligned MINIMAL note app
+The left-aligned MINIMAL note app
